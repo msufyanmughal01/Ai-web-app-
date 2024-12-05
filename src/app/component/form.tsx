@@ -3,7 +3,7 @@ import { IoLogoGoogle } from "react-icons/io";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { createClient } from "../utils/supabase/client";
 import { useRouter } from "next/navigation";
 
@@ -68,7 +68,7 @@ const Login = () => {
           </button> */}
         </>
       ) : (
-        <div className="animate-bounce hover:paused bg-black rounded-2xl h-[400px] w-[350px]">
+        <div className="animate-bounce hover:paused bg-black rounded-3xl h-[400px] w-[350px]">
           <div>
             <div className="flex justify-center">
               <h1 className="text-2xl font-semibold text-teal-50 p-4">
@@ -87,31 +87,27 @@ const Login = () => {
                 <IoLogoGoogle /> Sign In With Google
               </button>
             </div>
-            <div className="flex justify-center p-2 text-white text-xs">
+            <div className="flex justify-center p-5 text-white text-xs">
               <p>------- OR CONTINUE WITH -------</p>
             </div>
-            <div className="flex justify-center p-1">
-              <p className="text-white">Email</p>
-            </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center p-2">
               <Input
                 id="email"
                 type="email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-72 bg-black text-white"
+                className="w-72  bg-black text-white rounded-full border"
               />
             </div>
-            <div className="flex justify-center p-1">
-              <p className="text-white">Password</p>
-            </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center p-2 ">
               <Input
+              className="w-72 bg-black rounded-full border  "
+              placeholder="Password"
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-72 bg-black text-white"
               />
             </div>
             {error && (
@@ -119,7 +115,7 @@ const Login = () => {
             )}
             <div className="flex justify-center p-3">
               <button
-                className="p-2 rounded-full w-[250px] bg-white text-black"
+                className="p-2 rounded-full w-[150px] border text-white"
                 onClick={validateAndSubmit}
               >
                 Create Account

@@ -7,9 +7,10 @@
 }
 
 .dark{
-  --bg: #131314;
-  --bgSecondary: #1e1f20;
-  
+  @apply bg-zinc-800 text-slate-100
+}
+.light{
+  @apply bg-slate-100 text-zinc-800
 }
 
 @layer base {
