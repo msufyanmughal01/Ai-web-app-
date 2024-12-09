@@ -31,7 +31,8 @@ const Login = () => {
       // Set welcome message visibility
       setShowWelcome(true);
       setTimeout(() => router.push("/dashboard"), 3000); // Redirect after 2s
-    } catch (err) {
+    } catch (error) {
+      console.log(error)
       setError("An error occurred");
     }
   };

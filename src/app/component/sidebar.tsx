@@ -2,11 +2,12 @@
 import Image from "next/image"
 import React, { useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { Cog, Divide, Gem, Menu } from 'lucide-react';
+import { Cog,  Gem, Menu } from 'lucide-react';
 import Theme from "./theme";
 const Sidebar = () => {
   const {data : session} = useSession()
   const [isopen,setisopen]= useState(true)
+
   return (
     <div className='flex flex-col min-h-screen p-2 bg-zinc-900'>
       <div> 
@@ -35,7 +36,7 @@ const Sidebar = () => {
       {/* <div className="grow"></div> */}
       {isopen?(
       <div className="grow p-2">
-        <button className="flex items-center text-slate-100 gap-1 bg-zinc-900 rounded-xl p-1 "><Gem size={15} />Recent</button>
+        <button className="flex items-center text-slate-100 gap-1 bg-zinc-900 rounded-xl p-1 "><Gem size={15} />Recent </button>
       </div>):(
         <div className="grow p-2 flex justify-center ">
         <Gem size={15} className="text-white"/>
